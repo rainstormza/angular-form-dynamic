@@ -1,0 +1,10 @@
+<div [formGroup]="pullDownForm">
+  <label for="name">{{pullDownData.name}}</label>
+  <select class="" name="" formControlName="from">
+    <option *ngFor="let item of pullDownData.from" value="{{item.value}}">{{item.key}}</option>
+  </select>
+  ~
+  <select class="" name="" formControlName="to">
+    <option *ngFor="let item of pullDownData.to" value="{{item.value}}">{{item.key}}</option>
+  </select>
+</div>

@@ -1,0 +1,25 @@
+<!-- <div [formGroup]="checkBoxForm">
+  <label for="name">{{checkBoxData.name}}</label>
+  <a style="cursor: pointer; color: blue;" (click)="selectAll()">{{checkBoxData.link1}}</a>
+  <a style="cursor: pointer; color: red;" (click)="deselectAll()">{{checkBoxData.link2}}</a>
+  <br>
+  <div>
+    <ng-container *ngFor="let item of checkBoxData.checkbox; let i=index">
+      <input type="checkbox" name="item" value="{{item.value}}" formControlName="checkBoxList"> {{item.key}}
+    </ng-container>
+  </div>
+</div> -->
+
+
+<div [formGroup]="checkBoxForm">
+  <label for="name">{{checkBoxData.name}}</label>
+  <a style="cursor: pointer; color: blue;" (click)="selectAll()">{{checkBoxData.link1}}</a>
+  <a style="cursor: pointer; color: red;" (click)="deselectAll()">{{checkBoxData.link2}}</a>
+  <br>
+  <div formArrayName="checkBoxList">
+    <div *ngFor="let item of checkBoxData.checkbox; let i=index"  [formGroupName]="i">
+      <input type="checkbox" formControlName="isChosen" value="{{item.value}}" [checked]="flag"> {{item.key}}
+      <!-- <input type="checkbox" > {{item.value.key}} -->
+    </div>
+  </div>
+</div>

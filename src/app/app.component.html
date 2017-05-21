@@ -1,0 +1,25 @@
+<h1>
+  {{title}}
+</h1>
+
+<div>
+  <form [formGroup]="testForm" (ngSubmit)="onSubmit(testForm)">
+    <!-- {{testForm.controls.pullDownData1.value | json}} -->
+    <!-- <input formControlName="firstName"> -->
+    <app-pulldown [pullDownForm]="testForm.get('pullDownForm1')" [pullDownData]="pullDownData1"></app-pulldown>
+    <app-pulldown [pullDownForm]="testForm.get('pullDownForm2')" [pullDownData]="pullDownData2"></app-pulldown>
+    <app-pulldown [pullDownForm]="testForm.get('pullDownForm3')" [pullDownData]="pullDownData3"></app-pulldown>
+    <hr>
+    <app-checkbox [checkBoxForm]="testForm.get('checkBoxForm1')" [checkBoxData]="checkBoxData1"></app-checkbox>
+    <app-checkbox [checkBoxForm]="testForm.get('checkBoxForm2')" [checkBoxData]="checkBoxData2"></app-checkbox>
+
+    <button type="submit" class="">Submit</button>
+
+  </form>
+
+
+</div>
+
+
+<pre>{{testForm.value | json}}</pre>
+<pre>{{testForm.valid | json}}</pre>
