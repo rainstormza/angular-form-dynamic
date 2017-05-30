@@ -18,7 +18,7 @@
   <br>
   <div formArrayName="checkBoxList">
     <div *ngFor="let item of checkBoxData.checkbox; let i=index"  [formGroupName]="i">
-      <input type="checkbox" formControlName="isChosen" value="{{item.value}}" [checked]="flag"> {{item.key}}
+      <input type="checkbox" formControlName="isChosen" value="{{item.value}}" > {{item.key}}
       <!-- <input type="checkbox" > {{item.value.key}} -->
     </div>
   </div>

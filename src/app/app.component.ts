@@ -72,7 +72,7 @@ export class AppComponent implements OnInit {
   countArray2(checkboxs) {
     const arr = checkboxs.map(checkbox => {
       return this.fb.group({
-        isChosen: false,
+        isChosen: true,
         // key: checkbox.key,
         value: checkbox.value
       });
